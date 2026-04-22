@@ -1,4 +1,4 @@
-resource "aws_instance" "bastion" {
+resource "aws_instance" "vuln02" {
   ami           = "ami-0ec10929233384c7f"
   instance_type = "t2.micro"
   subnet_id     = var.public_subnet
@@ -12,7 +12,7 @@ resource "aws_instance" "bastion" {
   key_name = aws_key_pair.bastion_key.key_name
 
   tags = {
-    Name = "bastion-host"
+    Name = "vuln02-ec2"
   }
 }
 

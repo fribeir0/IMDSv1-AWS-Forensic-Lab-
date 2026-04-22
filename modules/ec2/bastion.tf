@@ -2,7 +2,7 @@ resource "aws_instance" "vuln02" {
   ami           = "ami-0ec10929233384c7f"
   instance_type = "t2.micro"
   subnet_id     = var.public_subnet
-
+  iam_instance_profile = aws_iam_instance_profile.vulne_profile.name
   associate_public_ip_address = true
 
   vpc_security_group_ids = [

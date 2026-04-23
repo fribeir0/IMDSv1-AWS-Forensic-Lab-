@@ -3,10 +3,10 @@ resource "aws_instance" "vulne01" {
   instance_type = "t2.micro"
   subnet_id     = var.public_subnet
 
-  associate_public_ip_address = false
+  associate_public_ip_address = true
 
   vpc_security_group_ids = [
-    aws_security_group.proxy_sg.id
+    aws_security_group.bastion_sg.id
   ]
 
   key_name = aws_key_pair.vulne_key.key_name
